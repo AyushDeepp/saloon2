@@ -1,0 +1,119 @@
+/* Shared Page Banner */
+.page-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/about.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 11rem 0;
+  border-bottom: 1px solid rgba(223, 165, 78, 0.2);
+  text-align: center;
+  color: #FFFFFF !important; /* Force white text for the dark banner */
+}
+
+.banner-subtitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--color-gold);
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
+/* About Content styling */
+.about-details {
+  background-color: var(--color-dark-1); /* #FFFFFF */
+}
+
+.about-images {
+  position: relative;
+  height: 480px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-text {
+  color: var(--color-text-muted); /* #666666 */
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* Highlights Grid */
+.about-highlights-section {
+  background-color: var(--color-dark-2); /* #F9F9F9 */
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.about-card {
+  background-color: var(--color-dark-1); /* #FFFFFF */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  border: var(--border-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(var(--color-gold-rgb), 0.1);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+  color: var(--color-gold);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.about-card:hover .card-icon {
+  background-color: var(--color-gold);
+  color: #2C2C2C;
+  transform: scale(1.1);
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  font-family: var(--font-sans);
+  margin-bottom: 1rem;
+  color: var(--color-dark-3);
+}
+
+.about-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 1024px) {
+  .about-images {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner-title {
+    font-size: 2.75rem;
+  }
+  
+  .about-images {
+    height: 350px;
+    margin-bottom: 3rem;
+  }
+}

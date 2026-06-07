@@ -1,0 +1,87 @@
+import React from 'react';
+import './Gallery.css';
+
+const Gallery = () => {
+  const galleryItems = [
+    {
+      id: 1,
+      category: 'Hair Styling',
+      title: 'Perfect Blow-dry',
+      img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 2,
+      category: 'Salon Interior',
+      title: 'Styling Room',
+      img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 3,
+      category: 'Makeup Artistry',
+      title: 'Bridal Elegance',
+      img: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 4,
+      category: 'Grooming',
+      title: 'Sharp Beard Fade',
+      img: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 5,
+      category: 'Hair Color',
+      title: 'Couture Balayage',
+      img: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 6,
+      category: 'Skincare',
+      title: 'Signature Glow',
+      img: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=600&q=80'
+    }
+  ];
+
+  return (
+    <section className="gallery section" id="gallery">
+      <div className="container">
+        <div className="section-header text-center">
+          <span className="section-subtitle gold-text">Portfolio</span>
+          <h2 className="section-title">Capturing Our Creations</h2>
+          <p className="section-description">Hover over any styling capture to pause the orbit and inspect our creations.</p>
+        </div>
+        
+        <div className="circle-gallery-container">
+          <div className="circle-gallery-center">
+            <div className="center-badge">
+              <svg width="45" height="45" viewBox="0 0 100 100" className="center-logo">
+                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#DFA54E" strokeWidth="4" />
+                <text x="50" y="62" fontFamily="'Playfair Display', serif" fontSize="42" fontWeight="bold" fill="#DFA54E" textAnchor="middle">E</text>
+              </svg>
+              <span className="badge-label">ELITE</span>
+            </div>
+          </div>
+          
+          <div className="circle-gallery-wrapper">
+            {galleryItems.map((item, index) => (
+              <div 
+                className="gallery-item-circle" 
+                key={item.id}
+                style={{ '--index': index }}
+              >
+                <div className="circle-item-inner">
+                  <img src={item.img} alt={item.title} loading="lazy" />
+                  <div className="circle-item-overlay">
+                    <span className="circle-item-cat">{item.category}</span>
+                    <h4>{item.title}</h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Gallery;

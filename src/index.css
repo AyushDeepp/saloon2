@@ -1,0 +1,260 @@
+/* ==========================================================================
+   Design System & Variables (Light Theme)
+   ========================================================================== */
+:root {
+  --color-dark-1: #FFFFFF;       /* Swap main background to white */
+  --color-dark-2: #F9F9F9;       /* Swap section background to light gray */
+  --color-dark-3: #2C2C2C;       /* Dark accent background (for header/footer) */
+  --color-gold: #DFA54E;         /* Accent gold */
+  --color-gold-rgb: 223, 165, 78;/* Gold in RGB for transparency */
+  --color-gold-hover: #c98e38;
+  
+  /* Theme Text Colors */
+  --color-text-main: #2C2C2C;    /* Main dark text */
+  --color-text-muted: #666666;   /* Muted gray text */
+  --color-text-light: #FFFFFF;   /* Light text on dark elements */
+  
+  /* Keep old values for compatibility where needed */
+  --color-white: #2C2C2C;        /* Swapped for default text, but we use text variables below */
+  --color-gray: #666666;
+  --color-light-gray: #2C2C2C;
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+  
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+  --border-gold: 1px solid rgba(var(--color-gold-rgb), 0.4);
+}
+
+/* ==========================================================================
+ Base Styles & Reset
+ ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark-1); /* #FFFFFF */
+  color: var(--color-text-main);          /* #2C2C2C */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-dark-3); /* Dark text for headings */
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ==========================================================================
+ Reusable Components
+ ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-text {
+  color: var(--color-gold);
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: #2C2C2C;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+.btn-sm {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* Section Header styling */
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 2.75rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+.text-left .section-title::after {
+  left: 0;
+  transform: none;
+}
+
+.section-description {
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 1.5rem auto 0 auto;
+}
+
+/* ==========================================================================
+   Responsive Media Queries (Global)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  html {
+      font-size: 15px;
+  }
+  
+  .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+      padding: 5rem 0;
+  }
+  
+  .hide-mobile {
+      display: none !important;
+  }
+  
+  .grid-2, .grid-3 {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+      font-size: 14px;
+  }
+  
+  .btn {
+      width: 100%;
+  }
+}
