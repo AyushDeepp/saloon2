@@ -1,7 +1,7 @@
 .faq {
-  background-color: var(--color-dark-2); /* #F9F9F9 secondary light background */
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  background-color: #000000; /* Pure black background */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .faq-list {
@@ -13,22 +13,22 @@
 }
 
 .faq-item {
-  background-color: var(--color-dark-1); /* #FFFFFF white background */
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #111111; /* Dark charcoal background for items */
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   transition: var(--transition);
 }
 
 .faq-item:hover {
   border-color: rgba(var(--color-gold-rgb), 0.5);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .faq-item.active {
   border-color: var(--color-gold);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .faq-question {
@@ -42,7 +42,7 @@
   font-size: 1.1rem;
   text-align: left;
   cursor: pointer;
-  color: var(--color-dark-3);
+  color: #FFFFFF; /* White text for dark readability */
   transition: var(--transition);
 }
 
@@ -52,7 +52,7 @@
 
 .faq-item.active .faq-question {
   color: var(--color-gold);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .faq-icon {
@@ -79,8 +79,43 @@
 
 .faq-answer {
   padding: 1.5rem 2rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.7); /* Muted white text */
   font-size: 0.98rem;
   line-height: 1.7;
-  border-top: 1px solid rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq .section-title {
+  color: #FFFFFF !important;
+}
+
+.faq .section-description {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Responsive FAQ styles */
+@media screen and (max-width: 768px) {
+  .faq-question {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.05rem;
+  }
+  .faq-answer {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .faq-question {
+    padding: 1rem 1.15rem;
+    font-size: 0.95rem;
+  }
+  .faq-answer {
+    padding: 1rem 1.15rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .faq-item.active .faq-answer-wrapper {
+    max-height: 500px; /* Safe limit for wrapped text on small width screens */
+  }
 }

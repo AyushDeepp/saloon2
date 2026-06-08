@@ -1,3 +1,7 @@
+.contact-page .page-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/contact.png');
+}
+
 .contact-details-section {
   background-color: var(--color-dark-1);
 }
@@ -114,8 +118,39 @@
   box-shadow: var(--shadow-lg);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+
+
   .contact-form-wrapper {
-      padding: 2rem 1.5rem;
+    padding: 2.25rem;
+  }
+
+  .map-container {
+    margin-top: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+
+  .contact-form-wrapper {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .contact-form h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.15rem;
+  }
+
+  .map-container {
+    margin-top: 2.5rem;
+  }
+
+  .contact-desc {
+    margin-bottom: 2rem;
   }
 }

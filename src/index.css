@@ -25,7 +25,7 @@
   
   /* Layout */
   --container-width: 1200px;
-  --header-height: 80px;
+  --header-height: 100px;
   --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --shadow-sm: none;
   --shadow-md: none;
@@ -92,6 +92,31 @@ button, input, textarea, select {
 /* ==========================================================================
  Reusable Components
  ========================================================================== */
+/* Shared Page Banner */
+.page-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 11rem 0;
+  border-bottom: 1px solid rgba(223, 165, 78, 0.2);
+  text-align: center;
+  color: #FFFFFF !important; /* Force white text for the dark banner */
+}
+
+.banner-subtitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--color-gold);
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
 .container {
   width: 100%;
   max-width: var(--container-width);
@@ -144,6 +169,7 @@ button, input, textarea, select {
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: var(--transition);
+  white-space: nowrap; /* Prevent button text from wrapping onto multiple lines */
 }
 
 .btn-primary {
@@ -236,8 +262,13 @@ button, input, textarea, select {
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+      --header-height: 70px;
+  }
+
+  /* Further increase section padding on tablets and mobiles for taller layout height */
   .section {
-      padding: 5rem 0;
+      padding: 9rem 0;
   }
   
   .hide-mobile {
@@ -247,14 +278,82 @@ button, input, textarea, select {
   .grid-2, .grid-3 {
       grid-template-columns: 1fr;
   }
+
+  /* Scale section headers on mobile and tablets */
+  .section-header {
+      margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+      font-size: 2.1rem;
+      margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+  }
+
+  .section-description {
+      font-size: 0.95rem;
+      margin-top: 1rem;
+  }
+
+  .page-banner {
+      padding: 13rem 0; /* Extremely tall banner height on tablets */
+  }
+
+  .banner-title {
+      font-size: 2.75rem;
+  }
+
+  /* Optimize container padding on mobile to maximize horizontal real estate */
+  .container {
+      padding: 0 1.25rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  :root {
+      --header-height: 53px; /* Match mobile navbar height to prevent white gap overflow */
+  }
+
   html {
       font-size: 14px;
   }
   
   .btn {
       width: 100%;
+      padding: 0.8rem 1.25rem;
+  }
+
+  /* Scale titles and headers down further on small phones */
+  .section-title {
+      font-size: 1.85rem;
+  }
+
+  .section-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+  }
+
+  .page-banner {
+      padding: 12rem 0; /* Extremely tall banner height on mobiles */
+  }
+  
+  .section {
+      padding: 8rem 0; /* Match desktop section padding on small mobile viewports */
+  }
+
+  .banner-title {
+      font-size: 2.1rem;
+  }
+
+  .container {
+      padding: 0 1rem;
+  }
+
+  .grid {
+      gap: 1.75rem;
   }
 }

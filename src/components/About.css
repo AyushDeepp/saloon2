@@ -11,7 +11,7 @@
   position: absolute;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
 }
 
 .main-img {
@@ -108,5 +108,35 @@
   .about-images {
       height: 350px;
       margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-images {
+      height: 270px;
+      margin-bottom: 1.5rem;
+  }
+
+  .about-highlights {
+      gap: 1rem;
+      margin-top: 1.5rem;
+  }
+
+  .highlight-item {
+      gap: 1rem;
+  }
+
+  .highlight-icon {
+      width: 42px;
+      height: 42px;
+      font-size: 1rem;
+  }
+
+  .highlight-info h3 {
+      font-size: 1.05rem;
+  }
+
+  .highlight-info p {
+      font-size: 0.88rem;
   }
 }

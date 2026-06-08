@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -24,80 +25,104 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
-      <div className="container header-container">
-        <NavLink to="/" className="logo-link" onClick={closeMenu}>
-          <img 
-            src="/logo.png" 
-            alt="Elite Makeover Studio Logo" 
-            className="logo-img" 
-            onError={(e) => {
-              e.target.style.display = 'none';
-              const fallback = document.getElementById('logo-fallback');
-              if (fallback) fallback.style.display = 'flex';
-            }} 
-          />
-          <div id="logo-fallback" className="logo-fallback-container">
-            <svg width="34" height="34" viewBox="0 0 100 100" className="logo-svg">
-              <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#DFA54E" strokeWidth="5" />
-              <text x="50" y="62" fontFamily="'Playfair Display', serif" fontSize="44" fontWeight="bold" fill="#DFA54E" textAnchor="middle">E</text>
-            </svg>
-            <span className="logo-text">ELITE</span>
+      {/* Top Bar */}
+      <div className="header-top">
+        <div className="container header-top-container">
+          <div className="header-top-left">
+            <a href="tel:+918383856742" className="top-info-link">
+              <Phone className="top-icon" size={13} />
+              <span className="phone-plus">+91 </span>
+              <span className="phone-number">83838 56742</span>
+            </a>
+            <a href="/contact" className="top-info-link">
+              <MapPin className="top-icon" size={13} />
+              <span>Find a Salon</span>
+            </a>
           </div>
-        </NavLink>
-        
-        <nav className={`nav-menu ${menuOpen ? 'open' : ''}`} id="nav-menu">
-          <ul className="nav-list">
-            <li>
-              <NavLink 
-                to="/" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-                end
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
-                to="/about" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                About Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
-                to="/services" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
-                to="/gallery" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                Gallery
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
-                to="/contact" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-        
-        <div className="header-actions">
-          <NavLink to="/contact" className="btn btn-outline btn-sm hide-mobile">Book Now</NavLink>
+          <div className="header-top-right">
+            <NavLink to="/contact" className="btn-book-appointment">
+              BOOK APPOINTMENT
+            </NavLink>
+            <div className="top-socials">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-icon-link">
+                <Facebook size={14} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-icon-link">
+                <Twitter size={14} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon-link">
+                <Instagram size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
+      <div className="header-main">
+        <div className="container header-main-container">
+          <NavLink to="/" className="logo-container" onClick={closeMenu}>
+            <div className="logo-looks">ELITE</div>
+            <div className="logo-salon">SALON</div>
+          </NavLink>
+          
+          <nav className={`nav-menu ${menuOpen ? 'open' : ''}`} id="nav-menu">
+            <ul className="nav-list">
+              <li>
+                <NavLink 
+                  to="/" 
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  onClick={closeMenu}
+                  end
+                >
+                  HOME
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/about" 
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  ABOUT US
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/services" 
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  SERVICES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/gallery" 
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  GALLERY
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/contact" 
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  CONTACT
+                </NavLink>
+              </li>
+              {/* BOOK APPOINTMENT link inside menu on mobile only */}
+              <li className="mobile-only-item">
+                <NavLink to="/contact" className="mobile-book-btn" onClick={closeMenu}>
+                  BOOK APPOINTMENT
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+
           <button 
             className={`nav-toggle ${menuOpen ? 'open' : ''}`} 
             onClick={toggleMenu}
@@ -114,3 +139,4 @@ const Header = () => {
 };
 
 export default Header;
+

@@ -17,7 +17,6 @@ const Contact = () => {
         <video 
           src="/vid.mp4" 
           className="salon-video" 
-          controls 
           autoPlay 
           muted 
           loop 

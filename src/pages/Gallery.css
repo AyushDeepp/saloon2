@@ -1,10 +1,16 @@
+.gallery-page .page-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/gallary.png');
+}
+
 .gallery-showcase {
   background-color: var(--color-dark-1); /* #FFFFFF */
 }
 
+/* Bento Grid Styling */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
   gap: 1.5rem;
 }
 
@@ -12,8 +18,21 @@
   position: relative;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  height: 320px;
+  height: 100%;
   box-shadow: var(--shadow-md);
+  grid-row: span 1;
+  grid-column: span 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Tall Item (Vertical row span) */
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+/* Wide Item (Horizontal column span) */
+.gallery-item.wide {
+  grid-column: span 2;
 }
 
 .gallery-item img {
@@ -29,7 +48,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(31, 31, 30, 0.9) 10%, rgba(31, 31, 30, 0.2) 80%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -51,7 +70,7 @@
 
 .gallery-cat {
   color: var(--color-gold);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
@@ -59,22 +78,37 @@
 }
 
 .gallery-overlay h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #FFFFFF;
+  font-family: var(--font-serif);
+  font-weight: 600;
 }
 
+/* Responsive Bento Grid Adjustments */
 @media screen and (max-width: 1024px) {
   .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 240px;
+  }
+  
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
+  .gallery-item.tall {
+    grid-row: span 2;
   }
 }
 
 @media screen and (max-width: 768px) {
   .gallery-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 280px;
   }
   
-  .gallery-item {
-      height: 280px;
+  .gallery-item.wide,
+  .gallery-item.tall {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }

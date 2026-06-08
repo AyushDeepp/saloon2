@@ -7,6 +7,7 @@ import Services from './pages/Services'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </Router>
   )
 }

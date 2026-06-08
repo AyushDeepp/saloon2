@@ -2,7 +2,6 @@
   background-color: var(--color-dark-1); /* White background per light theme */
   position: relative;
   overflow: hidden;
-  padding: 6rem 0;
 }
 
 .reviews-marquee-container {
@@ -138,16 +137,34 @@
   text-align: left;
 }
 
-/* Responsive adjustment */
 @media screen and (max-width: 480px) {
   .review-card {
-    width: 300px;
-    min-width: 300px;
-    padding: 1.75rem 1.5rem;
+    width: 280px;
+    min-width: 280px;
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
   }
   
   .review-avatar-container {
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
+    padding: 2px;
+  }
+
+  .review-author-name {
+    font-size: 1rem;
+  }
+
+  .review-author-role {
+    font-size: 0.8rem;
+  }
+
+  .review-card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .reviews-marquee-track {
+    gap: 1.25rem;
   }
 }

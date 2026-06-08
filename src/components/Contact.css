@@ -1,6 +1,5 @@
 .contact {
   background-color: var(--color-dark-1);
-  padding: 4rem 0;
 }
 
 .contact .section-header {
@@ -39,10 +38,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .contact {
-    padding: 3rem 0;
-  }
-  
   .video-wrapper.full-width-video {
     margin-bottom: 2rem;
   }

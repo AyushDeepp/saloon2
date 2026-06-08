@@ -1,3 +1,7 @@
+.services-page .page-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/service.png');
+}
+
 .services-menu {
   background-color: var(--color-dark-2); /* #F9F9F9 */
 }
@@ -113,4 +117,55 @@
 
 .service-link:hover .arrow-icon {
   transform: translateX(5px);
+}
+
+/* Services Page Responsive Adjustments */
+@media screen and (max-width: 768px) {
+
+
+  .services-tabs {
+    margin-bottom: 2.25rem;
+    gap: 0.75rem;
+  }
+
+  .tab-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+
+  .services-tabs {
+    gap: 0.5rem;
+  }
+
+  .tab-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .service-img-wrapper {
+    height: 190px;
+  }
+
+  .service-info {
+    padding: 1.25rem;
+  }
+
+  .service-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-info p {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-price {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.9rem;
+  }
 }

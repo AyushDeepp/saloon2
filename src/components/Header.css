@@ -3,58 +3,170 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   z-index: 1000;
   transition: var(--transition);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  background-color: rgba(0, 0, 0, 0.92); /* Translucent premium black background */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #000000;
 }
 
-/* Scrolled Header */
-.header.scrolled {
-  height: 70px;
-  background-color: #000000; /* Solid black when scrolled */
-  border-bottom: 1px solid rgba(var(--color-gold-rgb), 0.35);
-  box-shadow: var(--shadow-md);
+/* Top Bar Styling */
+.header-top {
+  background-color: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  padding: 0.6rem 0;
+  transition: all 0.3s ease;
 }
 
-.header-container {
+.header-top-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #FFFFFF; /* Always white logo */
+.header-top-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
+.top-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+  font-weight: 400;
+  transition: var(--transition);
+  font-size: 0.8rem;
+}
+
+.top-info-link:hover {
+  color: var(--color-gold);
+}
+
+.top-icon {
+  color: #FFFFFF;
+}
+
+/* Phone colors matching the image */
+.phone-plus {
+  color: #00a8ff; /* Cyan-blue color */
+  font-weight: 500;
+}
+
+.phone-number {
+  color: #00a8ff; /* Cyan-blue color */
+  font-weight: 500;
+}
+
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Book Appointment Button styling */
+.btn-book-appointment {
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.btn-book-appointment:hover {
+  background-color: var(--color-gold);
+  color: #000000;
+}
+
+/* Social Icons styling */
+.top-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon-link {
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: var(--color-gold);
+}
+
+/* Main Navbar Styling */
+.header-main {
+  padding: 0.6rem 0;
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+
+.header-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling matching LOOKS SALON */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logo-looks {
+  font-family: var(--font-sans);
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.logo-salon {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-gold);
+  margin-top: 2px;
+  padding-left: 2px;
+}
+
+/* Navigation Links styling */
 .nav-list {
   display: flex;
   gap: 2.25rem;
 }
 
 .nav-link {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   position: relative;
   padding: 0.5rem 0;
-  color: rgba(255, 255, 255, 0.8); /* Always light text */
+  color: #FFFFFF; /* Always white */
 }
 
+/* Underline styling - exact matching image layout */
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
@@ -98,75 +210,128 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.mobile-only-item {
+  display: none;
+}
+
+/* Scrolled Header State */
+.header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header.scrolled .header-top {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+.header.scrolled .header-main {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(var(--color-gold-rgb), 0.35);
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
+  .header-top {
+    display: none !important;
+  }
+
+  .header-main {
+    padding: 1rem 0;
+  }
+
   .nav-toggle {
-      display: flex;
+    display: flex;
   }
   
   .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 75%;
-      max-width: 350px;
-      height: 100vh;
-      background-color: #111111; /* Dark mobile drawer menu */
-      box-shadow: var(--shadow-lg);
-      padding: 6rem 3rem;
-      transition: var(--transition);
-      z-index: 1000;
-      border-left: 1px solid rgba(var(--color-gold-rgb), 0.25);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #111111; /* Dark mobile drawer menu */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 6rem 2.5rem;
+    transition: var(--transition);
+    z-index: 1000;
+    border-left: 1px solid rgba(var(--color-gold-rgb), 0.25);
   }
   
   .nav-menu.open {
-      right: 0;
+    right: 0;
   }
   
   .nav-list {
-      flex-direction: column;
-      gap: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
   .nav-link {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav-link::after {
+    display: none;
   }
   
   .nav-toggle.open .bar {
-      background-color: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+  }
+
+  .mobile-only-item {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .mobile-book-btn {
+    display: block;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-book-btn:hover {
+    background-color: var(--color-gold);
+    color: #000000;
   }
 }
 
-/* Navbar Logo Styles */
-.logo-link {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  text-decoration: none;
+@media screen and (max-width: 480px) {
+  /* Scale down logo text to fit perfectly alongside toggler on 320px screens */
+  .logo-looks {
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+  }
+
+  .logo-salon {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+  }
+
+  /* Shrink padding inside mobile drawer to maximize list visibility */
+  .nav-menu {
+    padding: 5rem 1.75rem 3rem 1.75rem;
+    width: 80%;
+  }
+
+  .nav-list {
+    gap: 1.25rem;
+  }
+
+  /* Tighten vertical padding slightly */
+  .header-main {
+    padding: 0.75rem 0;
+  }
 }
 
-.logo-img {
-  max-height: 45px;
-  width: auto;
-  display: block;
-}
-
-.logo-fallback-container {
-  display: none; /* Controlled dynamically by img onError */
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.logo-text {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #FFFFFF;
-  transition: var(--transition);
-}
-
-.header.scrolled .logo-text {
-  color: var(--color-text-main);
-}
 

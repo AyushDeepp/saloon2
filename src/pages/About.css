@@ -1,27 +1,5 @@
-/* Shared Page Banner */
-.page-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/about.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 11rem 0;
-  border-bottom: 1px solid rgba(223, 165, 78, 0.2);
-  text-align: center;
-  color: #FFFFFF !important; /* Force white text for the dark banner */
-}
-
-.banner-subtitle {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  display: block;
-  margin-bottom: 0.75rem;
-  color: var(--color-gold);
-}
-
-.banner-title {
-  font-size: 3.5rem;
-  letter-spacing: 1px;
-  color: #FFFFFF;
+.about-page .page-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/about.png');
 }
 
 /* About Content styling */
@@ -54,32 +32,34 @@
 
 .about-card {
   background-color: var(--color-dark-1); /* #FFFFFF */
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: var(--border-gold);
   padding: 3rem 2rem;
   border-radius: var(--border-radius-lg);
   text-align: center;
   transition: var(--transition);
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
+  transform: translateY(-8px);
 }
 
 .about-card:hover {
   transform: translateY(-8px);
   border: var(--border-gold);
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
 }
 
 .card-icon {
   width: 60px;
   height: 60px;
-  background-color: rgba(var(--color-gold-rgb), 0.1);
+  background-color: var(--color-gold);
   border: 1px solid rgba(var(--color-gold-rgb), 0.3);
-  color: var(--color-gold);
+  color: #2C2C2C;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
   transition: var(--transition);
+  transform: scale(1.1);
 }
 
 .about-card:hover .card-icon {
@@ -108,12 +88,43 @@
 }
 
 @media screen and (max-width: 768px) {
-  .banner-title {
-    font-size: 2.75rem;
-  }
+
   
   .about-images {
     height: 350px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-card {
+    padding: 2.25rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+
+  .about-images {
+    height: 270px;
+    margin-bottom: 2rem;
+  }
+
+  .about-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1rem;
+  }
+
+  .about-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-card p {
+    font-size: 0.88rem;
+    line-height: 1.6;
   }
 }
