@@ -1,5 +1,6 @@
 import React from 'react';
 import './Gallery.css';
+import HeicImage from './HeicImage';
 
 const Gallery = () => {
   const galleryItems = [
@@ -7,37 +8,37 @@ const Gallery = () => {
       id: 1,
       category: 'Hair Styling',
       title: 'Perfect Blow-dry',
-      img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80'
+      img: '/g1.png'
     },
     {
       id: 2,
       category: 'Salon Interior',
       title: 'Styling Room',
-      img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80'
+      img: '/g2.png'
     },
     {
       id: 3,
       category: 'Makeup Artistry',
       title: 'Bridal Elegance',
-      img: '/party.png'
+      img: '/g3.png'
     },
     {
       id: 4,
       category: 'Grooming',
       title: 'Sharp Beard Fade',
-      img: '/groom.png'
+      img: '/g4.png'
     },
     {
       id: 5,
       category: 'Hair Color',
       title: 'Couture Balayage',
-      img: '/hc.png'
+      img: '/g5.png'
     },
     {
       id: 6,
       category: 'Skincare',
       title: 'Signature Glow',
-      img: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=600&q=80'
+      img: '/g6.png'
     }
   ];
 
@@ -69,7 +70,7 @@ const Gallery = () => {
                 style={{ '--index': index }}
               >
                 <div className="circle-item-inner">
-                  <img src={item.img} alt={item.title} loading="lazy" />
+                  <HeicImage src={item.img} alt={item.title} loading="lazy" />
                   <div className="circle-item-overlay">
                     <span className="circle-item-cat">{item.category}</span>
                     <h4>{item.title}</h4>

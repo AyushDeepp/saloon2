@@ -1,5 +1,6 @@
 import React from 'react';
 import './Gallery.css';
+import HeicImage from '../components/HeicImage';
 
 const Gallery = () => {
   const galleryItems = [
@@ -7,64 +8,115 @@ const Gallery = () => {
       id: 1,
       category: 'Hair Styling',
       title: 'Perfect Blow-dry',
-      img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80',
+      img: '/g1.png',
       size: 'small'
     },
     {
       id: 2,
       category: 'Salon Interior',
       title: 'Styling Room',
-      img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
+      img: '/g2.png',
       size: 'tall'
     },
     {
       id: 3,
       category: 'Makeup Artistry',
       title: 'Bridal Elegance',
-      img: '/party.png',
+      img: '/g3.png',
       size: 'small'
     },
     {
       id: 4,
       category: 'Grooming',
       title: 'Sharp Beard Fade',
-      img: '/groom.png',
+      img: '/g4.png',
       size: 'small'
     },
     {
       id: 5,
       category: 'Hair Color',
       title: 'Couture Balayage',
-      img: '/hc.png',
+      img: '/g5.png',
       size: 'small'
     },
     {
       id: 6,
       category: 'Skincare',
       title: 'Signature Glow',
-      img: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=600&q=80',
+      img: '/g6.png',
       size: 'wide'
     },
     {
       id: 7,
       category: 'Nail Art',
       title: 'Luxury Manicure',
-      img: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80',
+      img: '/g7.png',
       size: 'small'
     },
     {
       id: 8,
       category: 'Skincare',
       title: 'Organic Facial',
-      img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80',
+      img: '/g8.png',
       size: 'small'
     },
     {
       id: 9,
       category: 'Hair Styling',
       title: 'Glamour Curls',
-      img: 'https://images.unsplash.com/photo-1595853035070-59a39fe84de3?auto=format&fit=crop&w=600&q=80',
+      img: '/g9.png',
       size: 'wide'
+    },
+    {
+      id: 10,
+      category: 'Bridal Makeup',
+      title: 'Royal Makeover',
+      img: '/g10.png',
+      size: 'small'
+    },
+    {
+      id: 11,
+      category: 'Salon Interior',
+      title: 'Luxury Comfort',
+      img: '/gt.png',
+      size: 'tall'
+    },
+    {
+      id: 12,
+      category: 'Hair Styling',
+      title: 'Creative Cut',
+      img: '/gt1.png',
+      size: 'small'
+    },
+    {
+      id: 13,
+      category: 'Nail Art',
+      title: 'Elegant Nails',
+      img: '/gt2.png',
+      size: 'small'
+    },
+    {
+      id: 14,
+      category: 'Makeup Artistry',
+      title: 'Glamour Look',
+      img: '/gt3.png',
+      size: 'wide'
+    },
+    {
+      id: 15,
+      category: 'Makeup Artistry',
+      title: 'Premium Styling',
+      img: '/IMG_6885.HEIC',
+      size: 'small',
+      customClass: 'crop-pillarbox'
+    },
+    {
+      id: 16,
+      category: 'Makeup Artistry',
+      title: 'Bridal Makeover',
+      img: '/IMG_6882.HEIC',
+      size: 'small',
+      customClass: 'crop-pillarbox'
     }
   ];
 
@@ -82,9 +134,9 @@ const Gallery = () => {
       <section className="gallery-showcase section">
         <div className="container">
           <div className="gallery-grid">
-            {galleryItems.map((item) => (
+             {galleryItems.map((item) => (
               <div className={`gallery-item ${item.size}`} key={item.id}>
-                <img src={item.img} alt={item.title} loading="lazy" />
+                <HeicImage src={item.img} alt={item.title} className={item.customClass || ''} loading="lazy" />
                 <div className="gallery-overlay">
                   <span className="gallery-cat">{item.category}</span>
                   <h3>{item.title}</h3>
