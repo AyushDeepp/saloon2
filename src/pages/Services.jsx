@@ -19,7 +19,7 @@ const Services = () => {
         title: 'Hair Colors',
         desc: 'Global hair coloring and root touch-ups using premium, safe color brands that enrich and protect your locks.',
         price: 'Trending',
-        img: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80',
+        img: '/hc.png',
         waText: "I'd like to inquire about Hair Coloring"
       },
       {
@@ -63,7 +63,7 @@ const Services = () => {
         title: 'Party & Event Makeover',
         desc: 'Glamorous and HD party makeup styles customized for birthdays, anniversaries, and family events.',
         price: 'Elite',
-        img: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80',
+        img: '/party.png',
         waText: "I'd like to book Party Makeup"
       },
       {
@@ -89,7 +89,7 @@ const Services = () => {
         title: 'Grooming Services',
         desc: 'Unisex hair trims, custom beard fades, shaving rituals, and herbal facial cleanups for a clean, sharp look.',
         price: 'Essential',
-        img: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80',
+        img: '/groom.png',
         waText: "I'd like to book Grooming Services"
       }
     ]

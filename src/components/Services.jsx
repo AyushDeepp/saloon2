@@ -10,7 +10,7 @@ const Services = () => {
     },
     {
       title: 'Hair Colors',
-      img: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80',
+      img: '/hc.png',
       waText: "I'd like to inquire about Hair Coloring at Elite Makeover Studio"
     },
     {
@@ -35,7 +35,7 @@ const Services = () => {
     },
     {
       title: 'Party Makeover',
-      img: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80',
+      img: '/party.png',
       waText: "I'd like to book Party Makeup at Elite Makeover Studio"
     },
     {
@@ -50,7 +50,7 @@ const Services = () => {
     },
     {
       title: 'Grooming Services',
-      img: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80',
+      img: '/groom.png',
       waText: "I'd like to book Grooming Services at Elite Makeover Studio"
     }
   ];

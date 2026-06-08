@@ -19,19 +19,19 @@ const Gallery = () => {
       id: 3,
       category: 'Makeup Artistry',
       title: 'Bridal Elegance',
-      img: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80'
+      img: '/party.png'
     },
     {
       id: 4,
       category: 'Grooming',
       title: 'Sharp Beard Fade',
-      img: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80'
+      img: '/groom.png'
     },
     {
       id: 5,
       category: 'Hair Color',
       title: 'Couture Balayage',
-      img: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80'
+      img: '/hc.png'
     },
     {
       id: 6,

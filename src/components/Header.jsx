@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Phone, Instagram } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -34,22 +34,12 @@ const Header = () => {
               <span className="phone-plus">+91 </span>
               <span className="phone-number">83838 56742</span>
             </a>
-            <a href="/contact" className="top-info-link">
-              <MapPin className="top-icon" size={13} />
-              <span>Find a Salon</span>
-            </a>
           </div>
           <div className="header-top-right">
             <NavLink to="/contact" className="btn-book-appointment">
               BOOK APPOINTMENT
             </NavLink>
             <div className="top-socials">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-icon-link">
-                <Facebook size={14} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-icon-link">
-                <Twitter size={14} />
-              </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon-link">
                 <Instagram size={14} />
               </a>
