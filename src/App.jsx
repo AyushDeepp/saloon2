@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -12,6 +13,7 @@ import WhatsAppButton from './components/WhatsAppButton'
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <main style={{ paddingTop: 'var(--header-height)' }}>
         <Routes>
