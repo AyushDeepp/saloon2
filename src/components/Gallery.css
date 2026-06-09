@@ -36,7 +36,7 @@
 .center-badge {
   width: 180px;
   height: 180px;
-  background-color: #FFFFFF;
+  background-color: #000000;
   border: 2px solid var(--color-gold);
   border-radius: 50%;
   display: flex;

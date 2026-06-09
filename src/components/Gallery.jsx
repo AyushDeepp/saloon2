@@ -71,10 +71,6 @@ const Gallery = () => {
               >
                 <div className="circle-item-inner">
                   <HeicImage src={item.img} alt={item.title} loading="lazy" />
-                  <div className="circle-item-overlay">
-                    <span className="circle-item-cat">{item.category}</span>
-                    <h4>{item.title}</h4>
-                  </div>
                 </div>
               </div>
             ))}
