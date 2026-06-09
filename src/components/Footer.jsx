@@ -7,7 +7,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <Link to="/" className="logo">ELITE MAKEOVER STUDIO<span className="gold-text">.</span></Link>
+          <Link to="/" className="logo-container-footer">
+            <img src="/logo2.webp" alt="Elite Makeover Studio" className="footer-logo-img" />
+          </Link>
           <p className="footer-desc">DSS No. 23, Huda Market, Sector 31, Faridabad. Premium Unisex Salon for Hair, Skin, Makeup & Grooming.</p>
           <div className="social-links">
             <a href="https://instagram.com/elitemakeoverstudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

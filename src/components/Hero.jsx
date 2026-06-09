@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
-  const images = ['/hero1.jpg', '/hero2.jpg', '/hero4.png', '/hero5.png', '/hero6.png'];
+  const images = ['/hero1.webp', '/hero2.webp', '/hero4.webp', '/hero5.webp', '/hero6.webp'];
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {

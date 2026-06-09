@@ -9,7 +9,7 @@ const Reviews = () => {
       text: "Aurelia Salon is outstanding! The ambiance is incredibly peaceful and luxurious, and the staff's attention to detail is remarkable. My stylist executed a flawless balayage. Highly recommended!",
       author: "Eleanor Vance",
       role: "Regular Client",
-      avatar: "/cl1.png"
+      avatar: "/cl1.webp"
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const Reviews = () => {
       text: "Absolutely the best gentlemen's cut I've had in years. The hot towel shave is a pure therapeutic experience. They treat grooming like a craft here, and it really shows.",
       author: "Julian Vance",
       role: "VIP Guest",
-      avatar: "/cl2.png"
+      avatar: "/cl2.webp"
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const Reviews = () => {
       text: "Got my bridal makeup and hair trial done here. The team was incredibly patient and talented. They designed a stunning, glowing layout that photographed beautifully.",
       author: "Sophia Martinez",
       role: "Bride-to-be",
-      avatar: "/cl3.png"
+      avatar: "/cl3.webp"
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const Reviews = () => {
       text: "Excellent grooming session. The stylists really understand hair texture and suggested a style that suits my face shape perfectly. Professional, clean, and highly skilled team.",
       author: "Saurabh",
       role: "Working Professional",
-      avatar: "/g1.png"
+      avatar: "/g1.webp"
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const Reviews = () => {
       text: "The signature skin therapy and hair spa here are top-tier. I left feeling completely refreshed and pampered. The staff is courteous and the ambience is extremely relaxing.",
       author: "Sheetal Surve",
       role: "Purchase Manager",
-      avatar: "/g5.png"
+      avatar: "/g5.webp"
     },
     {
       id: 6,
@@ -49,7 +49,7 @@ const Reviews = () => {
       text: "Always a wonderful experience at Elite. Their nail art team is incredibly creative, and the customer service is unmatched. Every visit feels like a luxury retreat.",
       author: "Jyoti Jonwal",
       role: "Sr. Investment Advisor",
-      avatar: "/g10.png"
+      avatar: "/g10.webp"
     }
   ];
 

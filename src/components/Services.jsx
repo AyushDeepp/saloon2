@@ -10,7 +10,7 @@ const Services = () => {
     },
     {
       title: 'Hair Colors',
-      img: '/hc.png',
+      img: '/hc.webp',
       waText: "I'd like to inquire about Hair Coloring at Elite Makeover Studio"
     },
     {
@@ -35,7 +35,7 @@ const Services = () => {
     },
     {
       title: 'Party Makeover',
-      img: '/party.png',
+      img: '/party.webp',
       waText: "I'd like to book Party Makeup at Elite Makeover Studio"
     },
     {
@@ -45,12 +45,12 @@ const Services = () => {
     },
     {
       title: 'Pedicure & Foot Care',
-      img: '/serv2.png',
+      img: '/serv2.webp',
       waText: "I'd like to book Foot Care/Pedicure at Elite Makeover Studio"
     },
     {
       title: 'Grooming Services',
-      img: '/groom.png',
+      img: '/groom.webp',
       waText: "I'd like to book Grooming Services at Elite Makeover Studio"
     }
   ];

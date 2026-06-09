@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .gallery.section {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('/service.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('/service.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -19,7 +19,7 @@ const Services = () => {
         title: 'Hair Colors',
         desc: 'Global hair coloring and root touch-ups using premium, safe color brands that enrich and protect your locks.',
         price: 'Trending',
-        img: '/hc.png',
+        img: '/hc.webp',
         waText: "I'd like to inquire about Hair Coloring"
       },
       {
@@ -63,7 +63,7 @@ const Services = () => {
         title: 'Party & Event Makeover',
         desc: 'Glamorous and HD party makeup styles customized for birthdays, anniversaries, and family events.',
         price: 'Elite',
-        img: '/party.png',
+        img: '/party.webp',
         waText: "I'd like to book Party Makeup"
       },
       {
@@ -81,7 +81,7 @@ const Services = () => {
         title: 'Pedicure & Foot Care',
         desc: 'Relaxing hot water foot soak, skin scrub massage, nail trimming, and moisture recovery therapies.',
         price: 'Standard',
-        img: '/serv2.png',
+        img: '/serv2.webp',
         waText: "I'd like to book Foot Care/Pedicure"
       },
       {
@@ -89,7 +89,7 @@ const Services = () => {
         title: 'Grooming Services',
         desc: 'Unisex hair trims, custom beard fades, shaving rituals, and herbal facial cleanups for a clean, sharp look.',
         price: 'Essential',
-        img: '/groom.png',
+        img: '/groom.webp',
         waText: "I'd like to book Grooming Services"
       }
     ]

@@ -11,10 +11,21 @@
   margin-bottom: 4rem;
 }
 
-.footer-brand .logo {
+.logo-container-footer {
   display: inline-block;
+}
+
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
   margin-bottom: 1.5rem;
-  color: #FFFFFF;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-logo-img {
+    height: 50px;
+  }
 }
 
 .footer-desc {

@@ -8,37 +8,37 @@ const Gallery = () => {
       id: 1,
       category: 'Hair Styling',
       title: 'Perfect Blow-dry',
-      img: '/g1.png'
+      img: '/g1.webp'
     },
     {
       id: 2,
       category: 'Salon Interior',
       title: 'Styling Room',
-      img: '/g2.png'
+      img: '/g2.webp'
     },
     {
       id: 3,
       category: 'Makeup Artistry',
       title: 'Bridal Elegance',
-      img: '/g3.png'
+      img: '/g3.webp'
     },
     {
       id: 4,
       category: 'Grooming',
       title: 'Sharp Beard Fade',
-      img: '/g4.png'
+      img: '/g4.webp'
     },
     {
       id: 5,
       category: 'Hair Color',
       title: 'Couture Balayage',
-      img: '/g5.png'
+      img: '/g5.webp'
     },
     {
       id: 6,
       category: 'Skincare',
       title: 'Signature Glow',
-      img: '/g6.png'
+      img: '/g6.webp'
     }
   ];
 

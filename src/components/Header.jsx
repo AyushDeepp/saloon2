@@ -52,8 +52,7 @@ const Header = () => {
       <div className="header-main">
         <div className="container header-main-container">
           <NavLink to="/" className="logo-container" onClick={closeMenu}>
-            <div className="logo-looks">ELITE</div>
-            <div className="logo-salon">SALON</div>
+            <img src="/logo2.webp" alt="Elite Makeover Studio" className="nav-logo-img" />
           </NavLink>
           
           <nav className={`nav-menu ${menuOpen ? 'open' : ''}`} id="nav-menu">

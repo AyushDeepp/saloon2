@@ -8,105 +8,105 @@ const Gallery = () => {
       id: 1,
       category: 'Hair Styling',
       title: 'Perfect Blow-dry',
-      img: '/g1.png',
+      img: '/g1.webp',
       size: 'small'
     },
     {
       id: 2,
       category: 'Salon Interior',
       title: 'Styling Room',
-      img: '/g2.png',
+      img: '/g2.webp',
       size: 'tall'
     },
     {
       id: 3,
       category: 'Makeup Artistry',
       title: 'Bridal Elegance',
-      img: '/g3.png',
+      img: '/g3.webp',
       size: 'small'
     },
     {
       id: 4,
       category: 'Grooming',
       title: 'Sharp Beard Fade',
-      img: '/g4.png',
+      img: '/g4.webp',
       size: 'small'
     },
     {
       id: 5,
       category: 'Hair Color',
       title: 'Couture Balayage',
-      img: '/g5.png',
+      img: '/g5.webp',
       size: 'small'
     },
     {
       id: 6,
       category: 'Skincare',
       title: 'Signature Glow',
-      img: '/g6.png',
+      img: '/g6.webp',
       size: 'wide'
     },
     {
       id: 7,
       category: 'Nail Art',
       title: 'Luxury Manicure',
-      img: '/g7.png',
+      img: '/g7.webp',
       size: 'small'
     },
     {
       id: 8,
       category: 'Skincare',
       title: 'Organic Facial',
-      img: '/g8.png',
+      img: '/g8.webp',
       size: 'small'
     },
     {
       id: 9,
       category: 'Hair Styling',
       title: 'Glamour Curls',
-      img: '/g9.png',
+      img: '/g9.webp',
       size: 'wide'
     },
     {
       id: 10,
       category: 'Bridal Makeup',
       title: 'Royal Makeover',
-      img: '/g10.png',
+      img: '/g10.webp',
       size: 'small'
     },
     {
       id: 11,
       category: 'Salon Interior',
       title: 'Luxury Comfort',
-      img: '/gt.png',
+      img: '/gt.webp',
       size: 'tall'
     },
     {
       id: 12,
       category: 'Hair Styling',
       title: 'Creative Cut',
-      img: '/gt1.png',
+      img: '/gt1.webp',
       size: 'small'
     },
     {
       id: 13,
       category: 'Nail Art',
       title: 'Elegant Nails',
-      img: '/gt2.png',
+      img: '/gt2.webp',
       size: 'small'
     },
     {
       id: 14,
       category: 'Makeup Artistry',
       title: 'Glamour Look',
-      img: '/gt3.png',
+      img: '/gt3.webp',
       size: 'wide'
     },
     {
       id: 15,
       category: 'Makeup Artistry',
       title: 'Premium Styling',
-      img: '/IMG_6885.HEIC',
+      img: '/IMG_6885.webp',
       size: 'small',
       customClass: 'crop-pillarbox'
     },
@@ -114,7 +114,7 @@ const Gallery = () => {
       id: 16,
       category: 'Makeup Artistry',
       title: 'Bridal Makeover',
-      img: '/IMG_6882.HEIC',
+      img: '/IMG_6882.webp',
       size: 'small',
       customClass: 'crop-pillarbox'
     }

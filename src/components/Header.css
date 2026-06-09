@@ -118,31 +118,23 @@
   align-items: center;
 }
 
-/* Logo Styling matching LOOKS SALON */
+/* Logo Styling */
 .logo-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
+  align-items: center;
   text-decoration: none;
 }
 
-.logo-looks {
-  font-family: var(--font-sans);
-  font-size: 1.9rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #FFFFFF;
+.nav-logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
-.logo-salon {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 5px;
-  color: var(--color-gold);
-  margin-top: 2px;
-  padding-left: 2px;
+@media screen and (max-width: 480px) {
+  .nav-logo-img {
+    height: 40px;
+  }
 }
 
 /* Navigation Links styling */
@@ -307,17 +299,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  /* Scale down logo text to fit perfectly alongside toggler on 320px screens */
-  .logo-looks {
-    font-size: 1.6rem;
-    letter-spacing: 1.5px;
-  }
-
-  .logo-salon {
-    font-size: 0.65rem;
-    letter-spacing: 4px;
-  }
-
   /* Shrink padding inside mobile drawer to maximize list visibility */
   .nav-menu {
     padding: 5rem 1.75rem 3rem 1.75rem;
