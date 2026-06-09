@@ -9,7 +9,7 @@ const Reviews = () => {
       text: "Aurelia Salon is outstanding! The ambiance is incredibly peaceful and luxurious, and the staff's attention to detail is remarkable. My stylist executed a flawless balayage. Highly recommended!",
       author: "Eleanor Vance",
       role: "Regular Client",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80"
+      avatar: "/cl1.png"
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const Reviews = () => {
       text: "Absolutely the best gentlemen's cut I've had in years. The hot towel shave is a pure therapeutic experience. They treat grooming like a craft here, and it really shows.",
       author: "Julian Vance",
       role: "VIP Guest",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80"
+      avatar: "/cl2.png"
     },
     {
       id: 3,
@@ -25,31 +25,31 @@ const Reviews = () => {
       text: "Got my bridal makeup and hair trial done here. The team was incredibly patient and talented. They designed a stunning, glowing layout that photographed beautifully.",
       author: "Sophia Martinez",
       role: "Bride-to-be",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80"
+      avatar: "/cl3.png"
     },
     {
       id: 4,
       stars: 5,
-      text: "Their wash-and-fold service saves me a lot of time. Even after repeated washes, my clothes are handled carefully and returned in great condition.",
+      text: "Excellent grooming session. The stylists really understand hair texture and suggested a style that suits my face shape perfectly. Professional, clean, and highly skilled team.",
       author: "Saurabh",
       role: "Working Professional",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80"
+      avatar: "/g1.png"
     },
     {
       id: 5,
       stars: 5,
-      text: "Very convenient service for busy schedules. Pickup was smooth, delivery was on time, and the clothes came back clean, soft, and well packed.",
+      text: "The signature skin therapy and hair spa here are top-tier. I left feeling completely refreshed and pampered. The staff is courteous and the ambience is extremely relaxing.",
       author: "Sheetal Surve",
       role: "Purchase Manager",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
+      avatar: "/g5.png"
     },
     {
       id: 6,
       stars: 5,
-      text: "What I liked most was the consistency. Every order has been neatly finished, and the team is polite, responsive, and easy to coordinate with.",
+      text: "Always a wonderful experience at Elite. Their nail art team is incredibly creative, and the customer service is unmatched. Every visit feels like a luxury retreat.",
       author: "Jyoti Jonwal",
       role: "Sr. Investment Advisor",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
+      avatar: "/g10.png"
     }
   ];
 
