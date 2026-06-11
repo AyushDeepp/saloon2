@@ -1,46 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CONTACT_INFO, GALLERY_ITEMS } from '../constants/siteData';
 import './Gallery.css';
 import HeicImage from './HeicImage';
+import Lightbox from './Lightbox';
 
 const Gallery = () => {
-  const galleryItems = [
-    {
-      id: 1,
-      category: 'Hair Styling',
-      title: 'Perfect Blow-dry',
-      img: '/g1.webp'
-    },
-    {
-      id: 2,
-      category: 'Salon Interior',
-      title: 'Styling Room',
-      img: '/g2.webp'
-    },
-    {
-      id: 3,
-      category: 'Makeup Artistry',
-      title: 'Bridal Elegance',
-      img: '/g3.webp'
-    },
-    {
-      id: 4,
-      category: 'Grooming',
-      title: 'Sharp Beard Fade',
-      img: '/g4.webp'
-    },
-    {
-      id: 5,
-      category: 'Hair Color',
-      title: 'Couture Balayage',
-      img: '/g5.webp'
-    },
-    {
-      id: 6,
-      category: 'Skincare',
-      title: 'Signature Glow',
-      img: '/g6.webp'
-    }
-  ];
+  // Use the first 6 items for the home page layout
+  const galleryItems = GALLERY_ITEMS.slice(0, 6);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleOpenLightbox = (index) => {
+    setCurrentIndex(index);
+    setIsOpen(true);
+  };
 
   return (
     <section className="gallery section" id="gallery">
@@ -48,17 +22,13 @@ const Gallery = () => {
         <div className="section-header text-center">
           <span className="section-subtitle gold-text">Portfolio</span>
           <h2 className="section-title">Capturing Our Creations</h2>
-          <p className="section-description">Hover over any styling capture to pause the orbit and inspect our creations.</p>
+          <p className="section-description">Hover over any styling capture to pause the orbit and click to view full screen.</p>
         </div>
         
         <div className="circle-gallery-container">
           <div className="circle-gallery-center">
-            <div className="center-badge">
-              <svg width="45" height="45" viewBox="0 0 100 100" className="center-logo">
-                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#DFA54E" strokeWidth="4" />
-                <text x="50" y="62" fontFamily="'Playfair Display', serif" fontSize="42" fontWeight="bold" fill="#DFA54E" textAnchor="middle">E</text>
-              </svg>
-              <span className="badge-label">ELITE</span>
+            <div className="center-badge logo-badge">
+              <img src={CONTACT_INFO.logoUrl} alt={CONTACT_INFO.studioName} className="center-logo-image" />
             </div>
           </div>
           
@@ -69,14 +39,26 @@ const Gallery = () => {
                 key={item.id}
                 style={{ '--index': index }}
               >
-                <div className="circle-item-inner">
+                <div className="circle-item-inner" onClick={() => handleOpenLightbox(index)}>
                   <HeicImage src={item.img} alt={item.title} loading="lazy" />
+                  <div className="circle-item-overlay">
+                    <span className="circle-item-cat">{item.category}</span>
+                    <h4>{item.title}</h4>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      <Lightbox 
+        isOpen={isOpen}
+        images={galleryItems}
+        currentIndex={currentIndex}
+        onClose={() => setIsOpen(false)}
+        setCurrentIndex={setCurrentIndex}
+      />
     </section>
   );
 };

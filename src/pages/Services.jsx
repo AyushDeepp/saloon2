@@ -1,106 +1,23 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import { CONTACT_INFO, SERVICES_DETAILED } from '../constants/siteData';
 import './Services.css';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('hair');
-
-  const servicesData = {
-    hair: [
-      {
-        id: 'h1',
-        title: 'Cut & Style',
-        desc: 'Precision haircuts and customized styling profiles for both men and women, finished with a professional blow-dry.',
-        price: 'Popular',
-        img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80',
-        waText: "I'd like to book a Cut & Style appointment"
-      },
-      {
-        id: 'h2',
-        title: 'Hair Colors',
-        desc: 'Global hair coloring and root touch-ups using premium, safe color brands that enrich and protect your locks.',
-        price: 'Trending',
-        img: '/hc.webp',
-        waText: "I'd like to inquire about Hair Coloring"
-      },
-      {
-        id: 'h3',
-        title: 'Hair Wash & Set',
-        desc: 'Restorative shampoo wash, deep conditioning, and signature setting finishes for smooth, daily manageable styling.',
-        price: 'Standard',
-        img: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80',
-        waText: "I'd like to book a Hair Wash & Set"
-      },
-      {
-        id: 'h4',
-        title: 'Highlights',
-        desc: 'Custom highlight streaks, balayage, and custom panel lights tailored to define your style.',
-        price: 'Premium',
-        img: 'https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=600&q=80',
-        waText: "I'd like to inquire about Highlights"
-      }
-    ],
-    skin: [
-      {
-        id: 's1',
-        title: 'Facials & Skin Glow',
-        desc: 'Signature skin facials, fruit therapies, and D-Tan treatments to refresh and hydrate facial skin cells.',
-        price: 'Essential',
-        img: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=600&q=80',
-        waText: "I'd like to book a Facial appointment"
-      },
-      {
-        id: 's2',
-        title: 'Beauty Care & Cleanup',
-        desc: 'Cleanups and soothing masks customized for normal, sensitive, or oil-prone skin surfaces.',
-        price: 'Popular',
-        img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80',
-        waText: "I'd like to book a Skin Cleanup"
-      }
-    ],
-    makeup: [
-      {
-        id: 'm1',
-        title: 'Party & Event Makeover',
-        desc: 'Glamorous and HD party makeup styles customized for birthdays, anniversaries, and family events.',
-        price: 'Elite',
-        img: '/party.webp',
-        waText: "I'd like to book Party Makeup"
-      },
-      {
-        id: 'm2',
-        title: 'Bridal Makeovers',
-        desc: 'Specialized bridal, engagement, and sangeet makeover packages delivered by experienced artists.',
-        price: 'Bespoke',
-        img: 'https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=600&q=80',
-        waText: "I'd like to inquire about Bridal Makeover packages"
-      }
-    ],
-    grooming: [
-      {
-        id: 'g1',
-        title: 'Pedicure & Foot Care',
-        desc: 'Relaxing hot water foot soak, skin scrub massage, nail trimming, and moisture recovery therapies.',
-        price: 'Standard',
-        img: '/serv2.webp',
-        waText: "I'd like to book Foot Care/Pedicure"
-      },
-      {
-        id: 'g2',
-        title: 'Grooming Services',
-        desc: 'Unisex hair trims, custom beard fades, shaving rituals, and herbal facial cleanups for a clean, sharp look.',
-        price: 'Essential',
-        img: '/groom.webp',
-        waText: "I'd like to book Grooming Services"
-      }
-    ]
-  };
+  const servicesData = SERVICES_DETAILED;
 
   const getWhatsAppLink = (text) => {
-    return `https://wa.me/918383856742?text=${encodeURIComponent(text)}`;
+    return `${CONTACT_INFO.whatsAppUrl}?text=${encodeURIComponent(text)}`;
   };
 
   return (
     <div className="services-page animate-fade-in">
+      <SEO 
+        title="Hair, Skin, Makeup & Grooming Services | Elite Makeover Studio"
+        description="Explore our menu of professional salon services in Faridabad. From precision haircuts and global hair coloring to HD bridal makeup, facial cleanups, and pedicures."
+        keywords="salon services faridabad, bridal makeup packages faridabad, hair coloring faridabad, best facial faridabad, pedicure foot care faridabad, mens grooming faridabad, beauty salon menu sector 31"
+      />
       {/* Page Banner */}
       <div className="page-banner">
         <div className="container text-center">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Phone, Instagram } from 'lucide-react';
+import { CONTACT_INFO } from '../constants/siteData';
 import './Header.css';
 
 const Header = () => {
@@ -29,10 +30,9 @@ const Header = () => {
       <div className="header-top">
         <div className="container header-top-container">
           <div className="header-top-left">
-            <a href="tel:+918383856742" className="top-info-link">
+            <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="top-info-link">
               <Phone className="top-icon" size={13} />
-              <span className="phone-plus">+91 </span>
-              <span className="phone-number">83838 56742</span>
+              <span>{CONTACT_INFO.phone}</span>
             </a>
           </div>
           <div className="header-top-right">
@@ -40,7 +40,7 @@ const Header = () => {
               BOOK APPOINTMENT
             </NavLink>
             <div className="top-socials">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon-link">
+              <a href={CONTACT_INFO.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon-link">
                 <Instagram size={14} />
               </a>
             </div>

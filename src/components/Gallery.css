@@ -52,25 +52,16 @@
   box-shadow: none;
 }
 
-.center-logo {
-  width: 55px;
-  height: 55px;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.05));
+.center-logo-image {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  border-radius: 50%;
   transition: transform 0.4s ease;
 }
 
-.center-badge:hover .center-logo {
-  transform: rotate(15deg);
-}
-
-.badge-label {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-gold);
-  letter-spacing: 3px;
-  margin-top: 10px;
-  line-height: 1;
+.center-badge:hover .center-logo-image {
+  transform: scale(1.1);
 }
 
 /* Orbiting Wrapper - rotates 360deg */

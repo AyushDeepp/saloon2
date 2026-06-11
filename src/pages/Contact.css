@@ -154,3 +154,12 @@
     margin-bottom: 2rem;
   }
 }
+
+.contact-link-hover {
+  transition: var(--transition);
+}
+
+.contact-link-hover:hover {
+  color: var(--color-gold) !important;
+  text-decoration: underline !important;
+}

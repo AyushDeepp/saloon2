@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import { CONTACT_INFO } from '../constants/siteData';
 import './Contact.css';
 
 const Contact = () => {
@@ -54,6 +56,11 @@ const Contact = () => {
 
   return (
     <div className="contact-page animate-fade-in">
+      <SEO 
+        title="Contact Us & Book Appointment | Elite Makeover Studio Faridabad"
+        description="Book your slot at Elite Makeover Studio, Huda Market, Sector 31, Faridabad. Get location directions, call +91 8383856742, or book directly via WhatsApp."
+        keywords="book salon appointment faridabad, salon location sector 31 faridabad, contact elite makeover studio, huda market faridabad salon, phone number salon faridabad, booking salon"
+      />
       {/* Page Banner */}
       <div className="page-banner">
         <div className="container text-center">
@@ -81,7 +88,11 @@ const Contact = () => {
                   </div>
                   <div className="detail-text">
                     <h3>Address</h3>
-                    <p>DSS No. 23, Huda Market, Sector 31, Near HR 51 Restaurant, Faridabad, Haryana – 121003</p>
+                    <p>
+                      <a href={CONTACT_INFO.addressMapsUrl} target="_blank" rel="noopener noreferrer" className="contact-link-hover">
+                        {CONTACT_INFO.address}
+                      </a>
+                    </p>
                   </div>
                 </div>
                 
@@ -93,7 +104,11 @@ const Contact = () => {
                   </div>
                   <div className="detail-text">
                     <h3>Phone Number</h3>
-                    <p>+91 8383856742</p>
+                    <p>
+                      <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="contact-link-hover">
+                        {CONTACT_INFO.phone}
+                      </a>
+                    </p>
                   </div>
                 </div>
                 
@@ -108,7 +123,7 @@ const Contact = () => {
                   </div>
                   <div className="detail-text">
                     <h3>Owners</h3>
-                    <p>Sumit Saini & Deepak Saini</p>
+                    <p>{CONTACT_INFO.owners}</p>
                   </div>
                 </div>
                 
@@ -121,7 +136,7 @@ const Contact = () => {
                   </div>
                   <div className="detail-text">
                     <h3>Opening Hours</h3>
-                    <p>Mon - Sun: 10:00 AM - 8:00 PM</p>
+                    <p>{CONTACT_INFO.openingHours}</p>
                   </div>
                 </div>
               </div>

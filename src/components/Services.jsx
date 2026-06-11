@@ -1,62 +1,12 @@
 import React from 'react';
+import { CONTACT_INFO, SERVICES_SIMPLE } from '../constants/siteData';
 import './Services.css';
 
 const Services = () => {
-  const servicesList = [
-    {
-      title: 'Cut & Style',
-      img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80',
-      waText: "I'd like to book a Cut & Style appointment at Elite Makeover Studio"
-    },
-    {
-      title: 'Hair Colors',
-      img: '/hc.webp',
-      waText: "I'd like to inquire about Hair Coloring at Elite Makeover Studio"
-    },
-    {
-      title: 'Hair Wash & Set',
-      img: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80',
-      waText: "I'd like to book a Hair Wash & Set at Elite Makeover Studio"
-    },
-    {
-      title: 'Highlights',
-      img: 'https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=600&q=80',
-      waText: "I'd like to inquire about Highlights at Elite Makeover Studio"
-    },
-    {
-      title: 'Facials & Skin Glow',
-      img: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=600&q=80',
-      waText: "I'd like to book a Facial appointment at Elite Makeover Studio"
-    },
-    {
-      title: 'Beauty Cleanup',
-      img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80',
-      waText: "I'd like to book a Skin Cleanup at Elite Makeover Studio"
-    },
-    {
-      title: 'Party Makeover',
-      img: '/party.webp',
-      waText: "I'd like to book Party Makeup at Elite Makeover Studio"
-    },
-    {
-      title: 'Bridal Makeovers',
-      img: 'https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=600&q=80',
-      waText: "I'd like to inquire about Bridal Makeover packages at Elite Makeover Studio"
-    },
-    {
-      title: 'Pedicure & Foot Care',
-      img: '/serv2.webp',
-      waText: "I'd like to book Foot Care/Pedicure at Elite Makeover Studio"
-    },
-    {
-      title: 'Grooming Services',
-      img: '/groom.webp',
-      waText: "I'd like to book Grooming Services at Elite Makeover Studio"
-    }
-  ];
+  const servicesList = SERVICES_SIMPLE;
 
   const getWhatsAppLink = (text) => {
-    return `https://wa.me/918383856742?text=${encodeURIComponent(text)}`;
+    return `${CONTACT_INFO.whatsAppUrl}?text=${encodeURIComponent(text)}`;
   };
 
   return (

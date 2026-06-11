@@ -1,10 +1,11 @@
 import React from 'react';
+import { CONTACT_INFO } from '../constants/siteData';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
   return (
     <a 
-      href="https://wa.me/918383856742?text=Hi%20Elite%20Makeover%20Studio,%20I'd%20like%20to%20book%20an%20appointment!" 
+      href={`${CONTACT_INFO.whatsAppUrl}?text=Hi%20Elite%20Makeover%20Studio,%20I'd%20like%20to%20book%20an%20appointment!`} 
       className="whatsapp-float-btn" 
       target="_blank" 
       rel="noopener noreferrer" 

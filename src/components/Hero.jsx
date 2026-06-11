@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { CONTACT_INFO, HERO_DATA } from '../constants/siteData';
 import './Hero.css';
 
 const Hero = () => {
-  const images = ['/hero1.webp', '/hero2.webp', '/hero4.webp', '/hero5.webp', '/hero6.webp'];
+  const images = HERO_DATA.images;
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {
@@ -27,15 +28,18 @@ const Hero = () => {
       
       <div className="container hero-container">
         <div className="hero-content">
-          <span className="hero-subtitle gold-text">Premium Unisex Salon</span>
-          <h1 className="hero-title">Elite Makeover <br /><span className="gold-text italic">Studio</span></h1>
-          <p className="hero-text">Your destination for professional hair, skin, makeup, and grooming services in Faridabad. Dedicated salon care for both men and women with custom satisfaction.</p>
+          <span className="hero-subtitle gold-text">{HERO_DATA.subtitle}</span>
+          <h1 className="hero-title">
+            {HERO_DATA.title.replace(` ${HERO_DATA.italicWord}`, '')} <br />
+            <span className="gold-text italic">{HERO_DATA.italicWord}</span>
+          </h1>
+          <p className="hero-text">{HERO_DATA.text}</p>
           <div className="hero-btns">
             <Link to="/services" className="btn btn-primary">
               Explore Services
             </Link>
             <a 
-              href="https://wa.me/918383856742?text=Hi%20Elite%20Makeover%20Studio,%20I'd%20like%20to%20inquire%20about%20booking%20an%20appointment!" 
+              href={`${CONTACT_INFO.whatsAppUrl}?text=${encodeURIComponent(HERO_DATA.whatsAppMessage)}`} 
               className="btn btn-outline" 
               target="_blank" 
               rel="noopener noreferrer"
