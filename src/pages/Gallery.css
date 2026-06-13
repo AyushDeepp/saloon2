@@ -122,3 +122,105 @@
     grid-row: span 1;
   }
 }
+
+/* Category Filters Styling */
+.gallery-filters-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.gallery-filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-dark-2);
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(var(--color-gold-rgb), 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.filter-btn {
+  padding: 0.65rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 50px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  color: var(--color-gold);
+}
+
+.filter-btn.active {
+  background-color: var(--color-gold);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(var(--color-gold-rgb), 0.3);
+}
+
+/* Video Play Badge Styling */
+.video-play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-item:hover .video-play-badge {
+  transform: translate(-50%, -50%) scale(1.15);
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(var(--color-gold-rgb), 0.4);
+}
+
+/* Responsive Filters Scroll for Mobile & Tablets */
+@media screen and (max-width: 768px) {
+  .gallery-filters-container {
+    margin-bottom: 2rem;
+  }
+
+  .gallery-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+    max-width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-radius: 25px;
+  }
+
+  .gallery-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+  }
+}
+

@@ -67,7 +67,17 @@ const Lightbox = ({ isOpen, images, currentIndex, onClose, setCurrentIndex }) =>
 
       <div className="lightbox-content-container" onClick={(e) => e.stopPropagation()}>
         <div className="lightbox-image-wrapper">
-          <HeicImage src={currentImage.img} alt={currentImage.title} className="lightbox-image" />
+          {currentImage.isVideo ? (
+            <video 
+              src={currentImage.videoUrl} 
+              className="lightbox-video" 
+              controls 
+              autoPlay 
+              playsInline
+            />
+          ) : (
+            <HeicImage src={currentImage.img} alt={currentImage.title} className="lightbox-image" />
+          )}
         </div>
         
         <div className="lightbox-caption">

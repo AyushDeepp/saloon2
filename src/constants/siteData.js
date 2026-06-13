@@ -419,6 +419,33 @@ export const GALLERY_ITEMS = [
     title: 'Comfort Waiting Lounge',
     img: '/saloon12.jpeg',
     size: 'small'
+  },
+  {
+    id: 29,
+    category: 'Makeup Artistry',
+    title: 'Bridal Makeover Walkthrough',
+    img: '/g3.webp',
+    videoUrl: '/vid.mp4',
+    isVideo: true,
+    size: 'tall'
+  },
+  {
+    id: 30,
+    category: 'Hair Styling',
+    title: 'Precision Hair Cut & Style',
+    img: '/g1.webp',
+    videoUrl: '/vid.mp4',
+    isVideo: true,
+    size: 'wide'
+  },
+  {
+    id: 31,
+    category: 'Salon Interior',
+    title: 'Studio Tour Experience',
+    img: '/saloon12.jpeg',
+    videoUrl: '/vid.mp4',
+    isVideo: true,
+    size: 'small'
   }
 ];
 
@@ -434,7 +461,7 @@ export const REVIEWS_DATA = [
   {
     id: 2,
     stars: 5,
-    text: "I absolutely loved the entire experience with your team, especially Nancy — she was truly amazing. She understood exactly the kind of makeup look I wanted, and I completely trusted her to do her magic because she was so good at what she does. The final look turned out even better than I had imagined! The hairstyle was perfect as well and complemented everything so beautifully. Honestly, the whole experience was wonderful, and I’m so glad I chose your team. Thank you so much for making me feel so beautiful and comfortable throughout! ❤️",
+    text: "I absolutely loved the experience! Nancy understood exactly the makeup look I wanted and did her magic. The final look and hairstyle turned out even better than imagined. Thank you for making me feel so beautiful and comfortable! ❤️",
     author: "Neeru",
     role: "Regular Guest",
     avatar: "/cl2.webp"

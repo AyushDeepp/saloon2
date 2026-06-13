@@ -1,14 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import SEO from '../components/SEO';
 import { GALLERY_ITEMS } from '../constants/siteData';
+import { Play } from 'lucide-react';
 import './Gallery.css';
 import HeicImage from '../components/HeicImage';
 import Lightbox from '../components/Lightbox';
 
+const CATEGORIES = [
+  { id: 'all', label: 'All' },
+  { id: 'clients', label: 'Clients' },
+  { id: 'interior', label: 'Studio Tour' },
+  { id: 'videos', label: 'Videos' }
+];
+
 const Gallery = () => {
-  const galleryItems = GALLERY_ITEMS;
+  const [activeTab, setActiveTab] = useState('all');
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Shuffle the gallery items once when the component mounts
+  const shuffledItems = useMemo(() => {
+    const items = [...GALLERY_ITEMS];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items;
+  }, []);
+
+  const filteredItems = useMemo(() => {
+    return shuffledItems.filter(item => {
+      if (activeTab === 'all') return true;
+      if (activeTab === 'videos') return item.isVideo;
+      if (activeTab === 'interior') return item.category === 'Salon Interior';
+      if (activeTab === 'clients') return item.category !== 'Salon Interior';
+      return true;
+    });
+  }, [shuffledItems, activeTab]);
 
   const handleOpenLightbox = (index) => {
     setCurrentIndex(index);
@@ -33,15 +61,38 @@ const Gallery = () => {
       {/* Gallery Showcase */}
       <section className="gallery-showcase section">
         <div className="container">
+          {/* Category Filter Tabs */}
+          <div className="gallery-filters-container">
+            <div className="gallery-filters">
+              {CATEGORIES.map(cat => (
+                <button
+                  key={cat.id}
+                  className={`filter-btn ${activeTab === cat.id ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveTab(cat.id);
+                    setIsOpen(false);
+                  }}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="gallery-grid">
-             {galleryItems.map((item, index) => (
+             {filteredItems.map((item, index) => (
               <div 
-                className={`gallery-item ${item.size}`} 
+                className={`gallery-item ${item.size} ${item.isVideo ? 'video-item' : ''}`} 
                 key={item.id}
                 onClick={() => handleOpenLightbox(index)}
                 style={{ cursor: 'pointer' }}
               >
                 <HeicImage src={item.img} alt={item.title} className={item.customClass || ''} loading="lazy" />
+                {item.isVideo && (
+                  <div className="video-play-badge">
+                    <Play size={24} fill="currentColor" />
+                  </div>
+                )}
                 <div className="gallery-overlay">
                   <span className="gallery-cat">{item.category}</span>
                   <h3>{item.title}</h3>
@@ -54,7 +105,7 @@ const Gallery = () => {
 
       <Lightbox 
         isOpen={isOpen}
-        images={galleryItems}
+        images={filteredItems}
         currentIndex={currentIndex}
         onClose={() => setIsOpen(false)}
         setCurrentIndex={setCurrentIndex}
